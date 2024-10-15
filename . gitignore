@@ -1,0 +1,31 @@
+# Ignorar las dependencias de Node.js para el frontend y el backend
+frontend/node_modules/
+backend/node_modules/
+
+# Ignorar el archivo de entorno para las credenciales sensibles
+.env
+
+# Archivos de logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Directorios de compilación de frontend
+frontend/build/
+frontend/dist/
+
+# Ignorar archivos de Docker temporales
+.dockerignore
+
+# Ignorar caches de npm
+npm-cache/
+
+# Ignorar carpetas de Docker Volumes si es que los usas localmente
+docker-compose.override.yml
+
+# Ignorar IDEs específicos (opcional, puedes agregar más según el IDE que uses)
+.vscode/
+.idea/
+.DS_Store
