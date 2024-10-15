@@ -19,18 +19,21 @@ El proyecto sigue la siguiente estructura de carpetas:
 
 ```plaintext
 my-crud-app/
-├── backend/               # Código del back-end (Node.js, Express, DynamoDB)
-│   ├── config/            # Configuración de DynamoDB
-│   │   └── dynamoDB.ts
-│   ├── controllers/       # Controladores del back-end
-│   │   └── itemController.ts
-│   ├── models/            # Modelos de datos
-│   │   └── itemModel.ts
-│   ├── routes/            # Rutas del API
-│   │   └── itemRoutes.ts
-│   ├── tests/             # Pruebas del backend con Jest
-│   │   ├── itemController.test.ts
-│   │   └── socket.test.ts
+├── backend/                     # Código del back-end (Node.js, Express, DynamoDB)
+│   ├── src/            # Archivos estáticos
+    │   ├── config/            # Configuración de DynamoDB
+    │   │   └── dynamoDB.ts
+    │   ├── controllers/       # Controladores del back-end
+    │   │   └── itemController.ts
+    │   ├── models/            # Modelos de datos
+    │   │   └── itemModel.ts
+    │   ├── routes/            # Rutas del API
+    │   │   └── itemRoutes.ts
+    │   ├── tests/             # Pruebas del backend con Jest
+    │   │   ├── itemController.test.ts
+    │   │   └── socket.test.ts
+│   │   ├── swagger/           # Documentación de Swagger
+│   │   │    └── swagger.json
 │   ├── app.ts             # Configuración inicial del back-end
 │   ├── server.ts          # Servidor principal
 │   ├── Dockerfile         # Dockerfile para el backend
@@ -124,6 +127,10 @@ La aplicación incluye soporte para **WebSocket**. El servidor WebSocket está c
 - Los WebSockets se activan en la misma URL del backend en el puerto `3001`.
 - El front-end tiene la lógica para conectarse al WebSocket para recibir actualizaciones en tiempo real de los ítems CRUD.
 
+## Integración de Swagger
+
+La aplicación utiliza **Swagger** para documentar la API. Accede a la documentación en [http://localhost:3001/api-docs](http://localhost:3001/api-docs) para ver los endpoints y probarlos.
+
 ## Tecnologías Utilizadas
 
 - **Node.js**: Servidor back-end utilizando Express.
@@ -132,6 +139,7 @@ La aplicación incluye soporte para **WebSocket**. El servidor WebSocket está c
 - **Docker**: Contenerización de la aplicación.
 - **Jest**: Framework de pruebas para Node.js.
 - **Socket.IO**: Comunicación en tiempo real.
+- **Swagger**: Documentación de la API.
 
 ## Desplegando en Producción
 
@@ -155,3 +163,4 @@ docker-compose up
 
 - Asegúrate de que todos los servicios en Docker estén corriendo correctamente y que no haya conflictos de puertos.
 - Revisa las configuraciones de la base de datos DynamoDB en caso de usar una instancia en AWS en lugar de la configuración local.
+
