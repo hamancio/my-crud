@@ -9,7 +9,7 @@ services:
       AWS_ACCESS_KEY_ID: 'local'
       AWS_SECRET_ACCESS_KEY: 'local'
     volumes:
-      - ./backend:/usr/src/app
+      - ./backend:/usr/src/app  
     depends_on:
       - dynamodb_local
     env_file:
