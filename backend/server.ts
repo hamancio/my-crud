@@ -6,6 +6,8 @@ import { createServer } from 'http';
 import { Server } from 'socket.io';
 import itemRoutes from './src/routes/itemRoutes';
 import dynamoDB from './src/config/dynamoDB';
+import setupSwagger from './src/swagger/swagger'; // Importa el archivo de configuración de Swagger
+
 import {
   ListTablesCommand,
   CreateTableCommandInput,
@@ -31,9 +33,12 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use('/items', itemRoutes);
 
+// Configuración de Swagger
+setupSwagger(app); // Configura Swagger
+
 // Ruta básica
 app.get('/', (req: Request, res: Response) => {
-  res.send('Servidor funcionando...',);
+  res.send('Servidor funcionando...');
 });
 
 // Crear tabla si no existe en DynamoDB
